@@ -1,1 +1,4 @@
-// TODO
+User-agent: *
+Allow: /
+
+Sitemap: https://www.mycodercorner.com/sitemap.xml
