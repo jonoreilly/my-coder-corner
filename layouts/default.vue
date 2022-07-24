@@ -2,9 +2,7 @@
   <div>
     <TheHeader />
 
-    <main>
-      <slot />
-    </main>
+    <slot></slot>
 
     <TheFooter />
   </div>

@@ -1,13 +1,15 @@
 <template>
-  <header>
+  <header class="w-full bg-slate-200">
     <nav>
-      <ContentNavigation v-slot="{ navigation }">
-        <NavigationTree :navigation="navigation" />
-      </ContentNavigation>
+      <ul class="flex">
+        <li>
+          <NuxtLink to="/">Home</NuxtLink>
+        </li>
+
+        <li>
+          <NuxtLink to="/blogs">Blogs</NuxtLink>
+        </li>
+      </ul>
     </nav>
   </header>
 </template>
-
-<script setup lang="ts">
-import NavigationTree from "./navigation/Tree.vue";
-</script>
