@@ -1,7 +1,8 @@
 <template>
   <main>
     <article>
-      <ContentDoc path="/about-me" />
+      <!-- TODO: investigate paths -->
+      <ContentDoc path="/blogs/about-me" />
 
       <Author />
     </article>
