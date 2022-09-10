@@ -1,8 +1,8 @@
 <template>
   <main>
-    <article>
+    <article class="my-5 mx-4">
       <!-- TODO: investigate paths -->
-      <ContentDoc path="/blogs/about-me" />
+      <ContentDoc :path="blogPath" class="blog" />
 
       <Author />
     </article>
@@ -15,6 +15,10 @@ import Author from "@/components/blogs/Author.vue";
 definePageMeta({
   layout: "blog",
 });
+
+const route = useRoute();
+
+const blogPath = "/blogs/" + ((route.params.slug ?? []) as string[]).join("/");
 
 // TODO: Add json ld to blogs
 
@@ -29,3 +33,15 @@ definePageMeta({
 //   ],
 // });
 </script>
+
+<style scoped lang="postcss">
+:deep(.blog) {
+  h1 {
+    @apply text-3xl;
+  }
+
+  p {
+    @apply my-3;
+  }
+}
+</style>

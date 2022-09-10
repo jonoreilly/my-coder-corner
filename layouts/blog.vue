@@ -1,13 +1,19 @@
 <template>
   <NuxtLayout name="default">
-    <div class="md:flex">
-      <nav>
-        <ContentNavigation v-slot="{ navigation }">
-          <NavigationTree :navigation="navigation" />
-        </ContentNavigation>
-      </nav>
+    <div class="min-h-screen grid grid-cols-[1fr_auto_1fr]">
+      <div class="sticky top-0 max-h-screen overflow-y-scroll">
+        <nav class="p-3 h-full w-60 bg-green-50">
+          <ContentNavigation v-slot="{ navigation }">
+            <NavigationTree :navigation="navigation" />
+          </ContentNavigation>
+        </nav>
+      </div>
 
-      <slot></slot>
+      <div class="max-w-2xl w-screen">
+        <slot></slot>
+      </div>
+
+      <div></div>
     </div>
   </NuxtLayout>
 </template>

@@ -1,12 +1,10 @@
 <template>
-  <div>
+  <div class="pl-2">
     <!-- This level -->
 
-    <NuxtLink v-if="isPage" :to="entry._path">
+    <NuxtLink :to="entry._path">
       {{ entry.title }}
     </NuxtLink>
-
-    <span v-else>{{ entry.title }}</span>
 
     <!-- Children -->
     <ul v-if="children.length">
@@ -22,17 +20,6 @@ import { defineProps } from "vue";
 import type { NavItem } from "@nuxt/content/dist/runtime/types";
 
 const props = defineProps<{ entry: NavItem }>();
-
-const isPage = computed(() => {
-  // Doesnt have children || has child index
-  return (
-    !props.entry.children ||
-    Boolean(
-      props.entry.children?.filter((el) => el._path === props.entry._path)
-        .length
-    )
-  );
-});
 
 const children = computed(() => {
   // Group by path
@@ -59,3 +46,9 @@ const children = computed(() => {
   return Object.values(childrenMap);
 });
 </script>
+
+<style scoped>
+.router-link-active {
+  @apply underline;
+}
+</style>

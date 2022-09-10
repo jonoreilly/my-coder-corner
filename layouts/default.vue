@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="min-h-screen grid grid-rows-[max-content_auto_max-content]">
     <TheHeader />
 
-    <slot></slot>
+    <div>
+      <slot></slot>
+    </div>
 
     <TheFooter />
   </div>

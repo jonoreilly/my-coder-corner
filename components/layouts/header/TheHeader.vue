@@ -1,7 +1,7 @@
 <template>
-  <header class="w-full bg-slate-200">
+  <header class="w-full bg-green-900 text-white p-2">
     <nav>
-      <ul class="flex">
+      <ul class="flex gap-2">
         <li>
           <NuxtLink to="/">Home</NuxtLink>
         </li>
