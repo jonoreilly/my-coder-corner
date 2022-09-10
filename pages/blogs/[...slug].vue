@@ -18,7 +18,9 @@ definePageMeta({
 
 const route = useRoute();
 
-const blogPath = "/blogs/" + ((route.params.slug ?? []) as string[]).join("/");
+const slug = route.params.slug;
+
+const blogPath = "/blogs/" + ((slug.length ? slug : []) as string[]).join("/");
 
 // TODO: Add json ld to blogs
 
