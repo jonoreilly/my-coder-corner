@@ -1,7 +1,6 @@
 <template>
   <main>
-    <article class="my-5 mx-4">
-      <!-- TODO: investigate paths -->
+    <article class="my-5 mx-4 flex flex-col gap-16">
       <ContentDoc :path="blogPath" class="blog" />
 
       <Author />
@@ -39,7 +38,19 @@ const blogPath = "/blogs/" + ((slug.length ? slug : []) as string[]).join("/");
 <style scoped lang="postcss">
 :deep(.blog) {
   h1 {
-    @apply text-3xl;
+    @apply text-6xl my-12;
+  }
+
+  h2 {
+    @apply text-4xl my-10;
+  }
+
+  h3 {
+    @apply text-2xl my-8;
+  }
+
+  h4 {
+    @apply text-xl my-6;
   }
 
   p {
